@@ -1,0 +1,11 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../functions.sh.inc"
+check_basic
+
+if [ $# -eq 1 ]; then
+  key="('$1')"
+fi
+
+RESPONSE=$(curl ${CURL_OPTS[@]} "http://${DHOST}/odata/v2/DataStores$key")
+format_response "$RESPONSE"

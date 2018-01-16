@@ -1,0 +1,10 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../functions.sh.inc"
+check_basic
+
+USERNAME=$1
+
+curl --basic -u ${DLOGIN}:${DPASS} \
+   "http://${DHOST}/odata/v1/Users('${USERNAME}')/Cart?\$format=application/metalink4%2Bxml"
+

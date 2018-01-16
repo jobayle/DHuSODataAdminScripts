@@ -1,0 +1,13 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../functions.sh.inc"
+check_basic
+
+if [ $# -eq 1 ]; then
+  key="('$1')"
+fi
+
+curl -sS --basic -u ${DLOGIN}:${DPASS} \
+   -H 'Accept: application/xml' \
+   "http://${DHOST}/odata/v2/Evictions$key" \
+   | xmllint --format -

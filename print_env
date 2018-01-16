@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo DHOST=$DHOST
+echo DLOGIN=$DLOGIN
+echo DPASS=$DPASS
+
+exit
