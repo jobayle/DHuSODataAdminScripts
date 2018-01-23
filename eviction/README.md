@@ -15,7 +15,7 @@ Parameters between angle brackets (chevrons) are mandatory.
 
 Parameters between brackets ([]) are optional.
 
-Create an Eviction:
+Create an eviction:
 ```
 ./createEviction
     <-D_NAME=Name>
@@ -29,17 +29,22 @@ Create an Eviction:
     [-D_CRON_SCHEDULE=cron expression]
 ```
 
-List evictions / print an evictions:
+List evictions / print an eviction:
 ```
-./getEviction [evictions name]
-```
-
-Delete an evictions:
-```
-./deleteEviction <evictions name>
+./getEviction [eviction name]
 ```
 
-Update an evictions:
+Delete an eviction:
 ```
-./updateEviction <evictions nae> [any options accepted by createEviction]
+./deleteEviction <eviction name>
+```
+
+Update an eviction:
+```
+./updateEviction <eviction name> [any options accepted by createEviction]
+```
+
+Queue an eviction:
+```
+./queueEviction <eviction name>
 ```

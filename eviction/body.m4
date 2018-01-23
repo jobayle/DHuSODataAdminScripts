@@ -13,7 +13,6 @@ ex_property(          Filter,           `_FILTER', `true')dnl
 ex_property(         OrderBy,          `_ORDERBY', `true')dnl
 ex_property(TargetCollection, `_TARGETCOLLECTION', `true')dnl
 ex_property(    SoftEviction,     `_SOFTEVICTION')dnl
-ex_property(          Status,           `_STATUS')dnl
 dnl
 dnl  Cron config
 dnl
