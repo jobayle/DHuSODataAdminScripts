@@ -10,6 +10,6 @@ m4 "$@" "${BASH_SOURCE%/*}/body.m4" > body.tmp
 exit_if_nzero $?
 
 RESPONSE=$(curl ${CURL_OPTS[@]} -X PATCH -d @body.tmp "http://${DHOST}/odata/v2/Evictions($NAME)")
-format_response("$RESPONSE")
+format_response "$RESPONSE"
 
 rm body.tmp
