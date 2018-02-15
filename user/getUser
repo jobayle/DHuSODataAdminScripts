@@ -1,0 +1,16 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../functions.sh.inc"
+check_basic
+
+if [ $# -gt 1 ]; then
+  if [ ${#1} -gt 0 ]; then
+    key="('$1')"
+  fi
+  if [ $# -eq 2 ]; then
+    params="?$2"
+  fi
+fi
+
+RESPONSE=$(curl ${CURL_OPTS[@]} "http://${DHOST}/odata/v1/Users${key}${params}")
+format_response "$RESPONSE"
