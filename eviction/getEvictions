@@ -3,9 +3,7 @@
 source "${BASH_SOURCE%/*}/../functions.sh.inc"
 check_basic
 
-if [ $# -eq 1 ]; then
-  key="('$1')"
-fi
+arg=$(make_key_string "$1")$(make_uri_params "$2")
 
-RESPONSE=$(curl ${CURL_OPTS[@]} "http://${DHOST}/odata/v2/Evictions$key")
+RESPONSE=$(curl ${CURL_OPTS[@]} "http://${DHOST}/odata/v2/Evictions${arg}")
 format_response "$RESPONSE"

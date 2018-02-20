@@ -17,7 +17,7 @@ Parameters between brackets ([]) are optional.
 
 List DataStores / print a DataStore:
 ```
-./getDataStores [DataStore id]
+./getDataStores [DataStore id [URI parameters]]
 ```
 
 Create a DataStore:

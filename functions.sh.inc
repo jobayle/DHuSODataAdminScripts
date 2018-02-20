@@ -31,6 +31,27 @@ function check_xmllint_xpath {
   fi
 }
 
+# if the length of $1 is greater that 0, return "($1)"
+function make_key {
+  if [ -n "$1" ]; then
+    echo "($1)"
+  fi
+}
+
+# if the length of $1 is greater that 0, return "('$1')"
+function make_key_string {
+  if [ -n "$1" ]; then
+    echo "('$1')"
+  fi
+}
+
+# if the length of $1 is greater that 0, return "?$1"
+function make_uri_params {
+  if [ -n "$1" ]; then
+    echo "?$1"
+  fi
+}
+
 # Curl invocation options with ATOM format headers
 CURL_OPTS=(-Ss --basic -u ${DLOGIN}:${DPASS} -H 'Accept:application/atom+xml' -H 'Content-Type:application/atom+xml')
 # Curl invocation options with XML format headers

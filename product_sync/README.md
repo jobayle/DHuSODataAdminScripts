@@ -34,7 +34,7 @@ Create a Synchroniser:
 
 List synchronisers / print a synchroniser:
 ```
-./getSynchronizer [synchroniser id]
+./getSynchronizer [synchroniser id [URI parameters]]
 ```
 
 Delete a synchroniser:

@@ -19,7 +19,7 @@ Upload / ingest a new product:
 ```./ingest <path/to/data.zip>```
 
 List ingests / print an ingest:  
-```./getIngest [ingest id]```
+```./getIngest [ingest id [URI parameters]]```
 
 Delete an ingest:  
 ```./deleteIngest <ingest id>```

@@ -31,7 +31,7 @@ Create an eviction:
 
 List evictions / print an eviction:
 ```
-./getEviction [eviction name]
+./getEviction [eviction name [URI parameters]]
 ```
 
 Delete an eviction:

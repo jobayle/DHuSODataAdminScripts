@@ -27,7 +27,7 @@ Create a scanner:
 
 List scanners / print a scanner:
 ```
-./getScanner [scanner id]
+./getScanner [scanner id [URI parameters]]
 ```
 
 Delete a scanner:

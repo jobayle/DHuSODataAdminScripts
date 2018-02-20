@@ -3,14 +3,7 @@
 source "${BASH_SOURCE%/*}/../functions.sh.inc"
 check_basic
 
-if [ $# -gt 1 ]; then
-  if [ ${#1} -gt 0 ]; then
-    key="('$1')"
-  fi
-  if [ $# -eq 2 ]; then
-    params="?$2"
-  fi
-fi
+arg=$(make_key_string "$1")$(make_uri_params "$2")
 
-RESPONSE=$(curl ${CURL_OPTS[@]} "http://${DHOST}/odata/v1/Users${key}${params}")
+RESPONSE=$(curl ${CURL_OPTS[@]} "http://${DHOST}/odata/v1/Users${arg}")
 format_response "$RESPONSE"

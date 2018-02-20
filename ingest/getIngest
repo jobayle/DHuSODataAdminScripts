@@ -3,5 +3,7 @@
 source "${BASH_SOURCE%/*}/../functions.sh.inc"
 check_basic
 
-RESPONSE=$(curl ${CURL_OPTS[@]} "http://${DHOST}/odata/v1/Ingests($1)")
+arg=$(make_key "$1")$(make_uri_params "$2")
+
+RESPONSE=$(curl ${CURL_OPTS[@]} "http://${DHOST}/odata/v1/Ingests${arg}")
 format_response "$RESPONSE"

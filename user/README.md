@@ -34,7 +34,7 @@ Create a user:
 
 Get users
 ```
-./getUser [username] [extra parameters, e.g.: '$expand=SystemRoles']
+./getUser [username [extra parameters, e.g.: '$expand=SystemRoles']]
 ```
 
 Update a User:
