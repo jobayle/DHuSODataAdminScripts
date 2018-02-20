@@ -18,6 +18,7 @@ OData API.
 * ingest — Upload and Ingest products
 * product_sync — Manage OData Product Synchronisers
 * scanner — List,Create,Update,Remove FileScanners
+* source — List,Create,Update,Remove Sources
 * user_sync — Manage OData User Synchronisers
 
 ### Note
