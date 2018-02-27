@@ -22,6 +22,7 @@ ex_property(     FilterParam,      `_FILTERPARAM', true)dnl
 ex_property(SourceCollection, `_SOURCECOLLECTION', true)dnl
 ex_property(       GeoFilter,        `_GEOFILTER', true)dnl
 ex_property(  RemoteIncoming,   `_REMOTEINCOMING', true)dnl
+ex_property(     SkipOnError,      `_SKIPONERROR')dnl
         </m:properties>
     </content>
 </entry>

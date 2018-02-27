@@ -30,6 +30,7 @@ Create a Synchroniser:
     [-D_SOURCECOLLECTION=resource/path]
     [-D_LASTCREATIONDATE=date]
     [-D_GEOFILTER=geofilter]
+    [-D_SKIPONERROR=true|false]
 ```
 
 List synchronisers / print a synchroniser:
