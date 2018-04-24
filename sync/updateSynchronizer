@@ -10,7 +10,7 @@ shift 2
 m4 -D_SYNC_TYPE="$sync_type" "$@" "${BASH_SOURCE%/*}/body.m4" > body.tmp
 exit_if_nzero $?
 
-RESPONSE=$(curl ${CURL_OPTS[@]} -X PATCH "http://${DHOST}/odata/v2/Synchronizers($key)")
+RESPONSE=$(curl ${CURL_OPTS[@]} -X PATCH -d @body.tmp "http://${DHOST}/odata/v2/Synchronizers($key)")
 format_response "$RESPONSE"
 
 rm body.tmp

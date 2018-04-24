@@ -61,6 +61,16 @@ Update a synchroniser:
 
 There are options to nullify nullable properties, just add `_NULL', e.g.: -D_LABEL_NULL, -D_GEOFILTER_NULL, ...
 
+Start a synchroniser:
+```
+./startSync <synchroniser id>
+```
+
+Stop a synchroniser:
+```
+./stopSync <synchroniser id>
+```
+
 ### Examples:
 
 ```bash

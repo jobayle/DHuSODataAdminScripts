@@ -1,0 +1,4 @@
+#!/bin/bash
+
+"${BASH_SOURCE%/*}/updateSynchronizer" $1 $2 -D_CRON_ACTIVE=true
+
