@@ -47,5 +47,6 @@ Delete a DataStore:
 ```bash
 ./createDataStore -D_DATASTORE_TYPE=GMPDataStore -D_NAME=local_gmp -D_READONLY=true -D_PRIORITY=10\
       -D_GMP_REPOLOC=/var/gmp/tmp -D_HFS_LOCATION=/var/gmp\
-      -D_MAX_QUEUED_RQ=4 -D_IS_MASTER=true -D_DB_URL='jdbc:mysql://localhost/gmp?serverTimezone=Europe/Paris' -D_DB_USER=gmp -D_DB_PASS=gmp
+      -D_MAX_QUEUED_RQ=4 -D_IS_MASTER=true -D_TARGET_ID=target -D_AGENT_ID=agent\
+      -D_DB_URL='jdbc:mysql://localhost/gmp?serverTimezone=Europe/Paris' -D_DB_USER=gmp -D_DB_PASS=gmp
 ```

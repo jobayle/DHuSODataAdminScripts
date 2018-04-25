@@ -37,6 +37,12 @@ ex_property(     HFSLocation,  `_HFS_LOCATION')dnl
 ex_property(MaxQueuedRequest, `_MAX_QUEUED_RQ', `',   Int32)dnl
 ex_property(        IsMaster,     `_IS_MASTER', `', Boolean)dnl
 dnl
+defif_disjunc(`_HAS_GMPCONF', `_AGENT_ID', `_TARGET_ID')dnl
+ifdef(`_HAS_GMPCONF', `            <d:Configuration m:type="#OData.DHuS.GMPConfiguration">
+ex_property(         AgentId,      `_AGENT_ID', `', `', 4)dnl
+ex_property(        TargetId,     `_TARGET_ID', `', `', 4)dnl
+            </d:Configuration>', `dnl')
+dnl
 defif_disjunc(`_HAS_MYSQL', `_DB_URL', `_DB_USER', `_DB_PASS')dnl
 dnl
 ifdef(`_HAS_MYSQL', `            <d:MySQLConnectionInfo m:type="#OData.DHuS.MySQLConnectionInfo">
