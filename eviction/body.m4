@@ -6,13 +6,14 @@ include(`macros.m4')dnl
     <a:category scheme="http://docs.oasis-open.org/odata/ns/scheme" term="`#'OData.DHuS.Eviction"/>
     <a:content type="application/xml">
         <m:properties>
-ex_property(            Name,             `_NAME')dnl
-ex_property(      KeepPeriod,       `_KEEPPERIOD')dnl
-ex_property(  KeepPeriodUnit,   `_KEEPPERIODUNIT')dnl
-ex_property(          Filter,           `_FILTER', `true')dnl
-ex_property(         OrderBy,          `_ORDERBY', `true')dnl
-ex_property(TargetCollection, `_TARGETCOLLECTION', `true')dnl
-ex_property(    SoftEviction,     `_SOFTEVICTION')dnl
+ex_property(              Name,               `_NAME')dnl
+ex_property(        KeepPeriod,         `_KEEPPERIOD')dnl
+ex_property(    KeepPeriodUnit,     `_KEEPPERIODUNIT')dnl
+ex_property(MaxEvictedProducts, `_MAXEVICTEDPRODUCTS',     `', Int32)dnl
+ex_property(            Filter,             `_FILTER', `true')dnl
+ex_property(           OrderBy,            `_ORDERBY', `true')dnl
+ex_property(  TargetCollection,   `_TARGETCOLLECTION', `true')dnl
+ex_property(      SoftEviction,       `_SOFTEVICTION')dnl
 dnl
 dnl  Cron config
 dnl

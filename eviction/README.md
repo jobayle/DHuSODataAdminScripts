@@ -21,6 +21,7 @@ Create an eviction:
     <-D_NAME=Name>
     [-D_KEEPPERIOD=keep period]
     [-D_KEEPPERIODUNIT=DAYS|HOURS|MINUTES]
+    [-D_MAXEVICTEDPRODUCTS=max number of product to evict]
     [-D_FILTER=OData $filter]
     [-D_ORDERBY=OData $orderby]
     [-D_TARGETCOLLECTION=collection name]
