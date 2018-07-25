@@ -3,5 +3,5 @@
 source "${BASH_SOURCE%/*}/../functions.sh.inc"
 check_basic
 
-RESPONSE=$(curl ${CURL_OPTS_XML[@]} -X POST "http://${DHOST}/odata/v2/Evictions('$1')/OData.DHuS.QueueEviction")
+RESPONSE=$(curl ${CURL_OPTS_XML[@]} -X POST "${DHOST}/odata/v2/Evictions('$1')/OData.DHuS.QueueEviction")
 format_response "$RESPONSE"

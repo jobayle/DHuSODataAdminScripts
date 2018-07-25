@@ -3,5 +3,5 @@
 source "${BASH_SOURCE%/*}/../functions.sh.inc"
 check_basic
 
-RESPONSE=$(curl ${CURL_OPTS_XML[@]} -X POST "http://${DHOST}/odata/v1/LockUser?username='$1'&reason='$2'")
+RESPONSE=$(curl ${CURL_OPTS_XML[@]} -X POST "${DHOST}/odata/v1/LockUser?username='$1'&reason='$2'")
 format_response "$RESPONSE"

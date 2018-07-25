@@ -9,7 +9,7 @@ shift 1
 m4 -D_KEY=$KEY "$@" "${BASH_SOURCE%/*}/body.m4" > body.tmp
 exit_if_nzero $?
 
-RESPONSE=$(curl -X PUT ${CURL_OPTS[@]} -d @body.tmp "http://${DHOST}/odata/v1/Users('$KEY')")
+RESPONSE=$(curl -X PUT ${CURL_OPTS[@]} -d @body.tmp "${DHOST}/odata/v1/Users('$KEY')")
 format_response "$RESPONSE"
 
 rm body.tmp

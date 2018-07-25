@@ -7,7 +7,7 @@ check_basic
 m4 -D_ID="0L" "$@" "${BASH_SOURCE%/*}/body.m4" > body.tmp
 exit_if_nzero $?
 
-RESPONSE=$(curl ${CURL_OPTS[@]} -d @body.tmp http://${DHOST}/odata/v1/UserSynchronizers)
+RESPONSE=$(curl ${CURL_OPTS[@]} -d @body.tmp ${DHOST}/odata/v1/UserSynchronizers)
 format_response "$RESPONSE"
 
 rm body.tmp

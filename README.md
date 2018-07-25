@@ -26,7 +26,7 @@ OData API.
 All these scripts use the same configuration, three environment variables, to
 manage a specific instance of the DHuS:
 
-+ **DHOST** DHuS Host address eg: localhost:8080, scihub.copernicus.eu/dhus/
++ **DHOST** DHuS Host address eg: http://localhost:8080, https://scihub.copernicus.eu/dhus/
 + **DLOGIN** DHuS login username to connect to the $DHOST DHuS
 + **DPASS** DHuS login password to connect to the $DHOST DHuS
 

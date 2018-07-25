@@ -6,5 +6,5 @@ check_basic
 USERNAME=$1
 PROD_UUID=$2
 
-RESPONSE=$(curl -X DELETE ${CURL_OPTS_XML[@]} "http://${DHOST}/odata/v1/Users('${USERNAME}')/\$links/Cart('${PROD_UUID}')")
+RESPONSE=$(curl -X DELETE ${CURL_OPTS_XML[@]} "${DHOST}/odata/v1/Users('${USERNAME}')/\$links/Cart('${PROD_UUID}')")
 format_response "$RESPONSE"

@@ -5,5 +5,5 @@ check_basic
 
 arg=$(make_key "$1")$(make_uri_params "$2")
 
-RESPONSE=$(curl ${CURL_OPTS[@]} "http://${DHOST}/odata/v1/Ingests${arg}")
+RESPONSE=$(curl ${CURL_OPTS[@]} "${DHOST}/odata/v1/Ingests${arg}")
 format_response "$RESPONSE"

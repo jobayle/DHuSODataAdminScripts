@@ -6,5 +6,5 @@ check_basic
 USERNAME=$1
 
 curl --basic -u ${DLOGIN}:${DPASS} \
-   "http://${DHOST}/odata/v1/Users('${USERNAME}')/Cart?\$format=application/metalink4%2Bxml"
+   "${DHOST}/odata/v1/Users('${USERNAME}')/Cart?\$format=application/metalink4%2Bxml"
 

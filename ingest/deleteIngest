@@ -3,5 +3,5 @@
 source "${BASH_SOURCE%/*}/../functions.sh.inc"
 check_basic
 
-RESPONSE=$(curl ${CURL_OPTS_XML[@]} -X DELETE "http://${DHOST}/odata/v1/Ingests($1)")
+RESPONSE=$(curl ${CURL_OPTS_XML[@]} -X DELETE "${DHOST}/odata/v1/Ingests($1)")
 format_response "$RESPONSE"

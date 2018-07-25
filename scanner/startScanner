@@ -3,5 +3,5 @@
 source "${BASH_SOURCE%/*}/../functions.sh.inc"
 check_basic
 
-RESPONSE=$(curl ${CURL_OPTS_XML[@]} -X POST "http://${DHOST}/odata/v1/StartScanner?id=$1")
+RESPONSE=$(curl ${CURL_OPTS_XML[@]} -X POST "${DHOST}/odata/v1/StartScanner?id=$1")
 format_response "$RESPONSE"

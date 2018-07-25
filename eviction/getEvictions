@@ -5,5 +5,5 @@ check_basic
 
 arg=$(make_key_string "$1")$(make_uri_params "$2")
 
-RESPONSE=$(curl ${CURL_OPTS[@]} "http://${DHOST}/odata/v2/Evictions${arg}")
+RESPONSE=$(curl ${CURL_OPTS[@]} "${DHOST}/odata/v2/Evictions${arg}")
 format_response "$RESPONSE"

@@ -16,7 +16,7 @@ curl -X POST --basic -u ${DLOGIN}:${DPASS} --data-binary @${FILEPATH} \
   --header "Accept:application/atom+xml" \
   --header "Prefer:return-content" \
   -o out.xml \
-  "http://${DHOST}/odata/v1/Ingests"
+  "${DHOST}/odata/v1/Ingests"
 exit_if_nzero $?
 if [ ! -s out.xml ]; then exit 1; fi
 
@@ -28,13 +28,13 @@ if [ "$md5" != "$remote_md5" ] ; then
   echo "MD5 are different: local($md5) != remote($remote_md5), deleting uploaded product."
   echo 'Please retry.'
   echo -n 'Removing uploaded data ... '
-  RESPONSE=$(curl ${CURL_OPTS_XML[@]} -X DELETE "http://${DHOST}/odata/v1/Ingests($id)")
+  RESPONSE=$(curl ${CURL_OPTS_XML[@]} -X DELETE "${DHOST}/odata/v1/Ingests($id)")
   format_response "$RESPONSE"
 else
   m4 -D_FILENAME=$filename "$@" "${BASH_SOURCE%/*}/body.m4" > body.tmp
   exit_if_nzero $?
 
-  RESPONSE=$(curl ${CURL_OPTS[@]} -X PUT -d @body.tmp "http://${DHOST}/odata/v1/Ingests($id)")
+  RESPONSE=$(curl ${CURL_OPTS[@]} -X PUT -d @body.tmp "${DHOST}/odata/v1/Ingests($id)")
   format_response "$RESPONSE"
 
   rm body.tmp

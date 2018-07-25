@@ -5,5 +5,5 @@ check_basic
 
 USERNAME=$1
 
-RESPONSE=$(curl ${CURL_OPTS_XML[@]} "http://${DHOST}/odata/v1/Users('${USERNAME}')/\$links/Cart")
+RESPONSE=$(curl ${CURL_OPTS_XML[@]} "${DHOST}/odata/v1/Users('${USERNAME}')/\$links/Cart")
 format_response "$RESPONSE"

@@ -9,7 +9,7 @@ shift 1
 m4 -D_ID=$ID "$@" "${BASH_SOURCE%/*}/body.m4" > body.tmp
 exit_if_nzero $?
 
-RESPONSE=$(curl ${CURL_OPTS[@]} -X PUT -d @body.tmp "http://${DHOST}/odata/v1/Scanners($ID)")
+RESPONSE=$(curl ${CURL_OPTS[@]} -X PUT -d @body.tmp "${DHOST}/odata/v1/Scanners($ID)")
 format_response "$RESPONSE"
 
 rm body.tmp
