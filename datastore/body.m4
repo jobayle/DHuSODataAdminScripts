@@ -29,6 +29,18 @@ ex_property(    MaxItems,     `_MAXITEMS', `', Int32)dnl
 ')dnl
 dnl
 dnl
+dnl    Properties for OpenStack data stores:
+dnl
+ifelse(_DATASTORE_TYPE, `OpenStackDataStore', `dnl
+ex_property(  Provider,   `_PROVIDER')dnl
+ex_property(  Identity,   `_IDENTITY')dnl
+ex_property(Credential, `_CREDENTIAL')dnl
+ex_property(       Url,        `_URL')dnl
+ex_property(    Region,     `_REGION')dnl
+ex_property( Container,  `_CONTAINER')dnl
+')dnl
+dnl
+dnl
 dnl    Properties for GMP data stores:
 dnl
 ifelse(_DATASTORE_TYPE, `GMPDataStore', `dnl
