@@ -30,7 +30,7 @@ Supported synchroniser types: `SmartSynchronizer`
 Options of SmartSynchronizers:
 ```
     [-D_PAGESIZE=page size]
-    [-D_PARAMFILTER=$filter expression]
+    [-D_FILTERPARAM=$filter expression]
     [-D_GEOFILTER=geofilter]
     [-D_ATTEMPTS=attempts]
     [-D_TIMEOUT=timeout]

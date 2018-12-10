@@ -26,7 +26,7 @@ dnl    Properties for Smart Syncs:
 dnl
 ifelse(_SYNC_TYPE, `SmartSynchronizer', `dnl
 ex_property(   PageSize,    `_PAGESIZE', `', Int32)dnl
-ex_property(ParamFilter, `_PARAMFILTER', true)dnl
+ex_property(FilterParam, `_FILTERPARAM', true)dnl
 ex_property(  GeoFilter,   `_GEOFILTER', true)dnl
 ex_property(   Attempts,    `_ATTEMPTS', `', Int32)dnl
 ex_property(    Timeout,     `_TIMEOUT', `', Int64)dnl
