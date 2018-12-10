@@ -72,4 +72,4 @@ function exit_if_nzero {
 }
 
 # To include macros.m4
-export M4PATH="${BASH_SOURCE%/*}:$M4PATH"
+export M4PATH="${BASH_SOURCE%/*}/m4:$M4PATH"
