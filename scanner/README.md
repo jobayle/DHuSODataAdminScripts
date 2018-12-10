@@ -50,4 +50,14 @@ Stop a scanner:
 ./stopScanner <scanner id>
 ```
 
+Add a target Collection:
+```
+./addTargetCollection <scanner id> <collection name>
+```
+
+Remove a target Collection:
+```
+./deleteTargetCollection <scanner id> <collection name>
+```
+
 There are options to nullify nullable properties: -D_USERNAME_NULL, -D_PASSWORD_NULL, -D_PATTERN_NULL

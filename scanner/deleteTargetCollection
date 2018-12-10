@@ -1,0 +1,10 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../functions.sh.inc"
+check_basic
+
+ID=$1
+COL=$2
+
+RESPONSE=$(curl ${CURL_OPTS_XML[@]} -X DELETE "${DHOST}/odata/v1/Scanners(${ID})/\$links/Collections('${COL}')")
+format_response "$RESPONSE"
