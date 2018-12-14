@@ -73,3 +73,6 @@ function exit_if_nzero {
 
 # To include macros.m4
 export M4PATH="${BASH_SOURCE%/*}/m4:$M4PATH"
+
+# Empty action document
+ACTION_NO_PARAMS='<parameters></parameters>'
