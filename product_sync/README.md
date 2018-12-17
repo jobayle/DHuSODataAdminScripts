@@ -60,6 +60,16 @@ Stop a synchroniser:
 ./stopSync <synchroniser id>
 ```
 
+Set the TargetCollection:
+```
+./setTargetCollection <synchroniser id> <collection name>
+```
+
+Delete the TargetCollection:
+```
+./deleteTargetCollection <synchroniser id>
+```
+
 ### Examples:
 
 ```bash

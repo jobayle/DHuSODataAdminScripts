@@ -1,0 +1,9 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../functions.sh.inc"
+check_basic
+
+ID=$1
+
+RESPONSE=$(curl ${CURL_OPTS_XML[@]} -X DELETE "${DHOST}/odata/v1/Synchronizers(${ID})/\$links/TargetCollection")
+format_response "$RESPONSE"
