@@ -1,0 +1,25 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../functions.sh.inc"
+check_basic
+check_xmllint_xpath
+
+if [ $# -ne 1 ]; then echo 'Missing required parameter: <request> (start|stop)'; exit -1; fi
+
+ACTION=$1
+if [ ! '(' $ACTION = 'start' -o $ACTION = 'stop' ')' ]; then echo "Invalid <request> parameter: is '$ACTION', should be 'start' or 'stop'"; exit -1; fi
+
+RESPONSE=$(curl ${CURL_OPTS[@]} "${DHOST}/odata/v1/Synchronizers")
+exit_if_nzero $?
+if [ -z "$RESPONSE" ]; then echo 'Could not get synchronisers'; exit -1; fi
+
+activesyncs=`echo "$RESPONSE" | xmllint --nsclean --xpath "count(//*[name()='d:Request' and text()!='${ACTION}'])" - `
+echo "There are '$activesyncs' active synchronisers to $ACTION"
+if [ $activesyncs -le 0 ]; then exit 0; fi
+
+sync_ids=`echo "$RESPONSE" | xmllint --nsclean --xpath "//*[name()='d:Request' and text()!='${ACTION}']/parent::node()/*[name()='d:Id']" - | sed -re 's,<(/?)d:Id>,\1,g' -`
+for (( it=1 ; it<=$activesyncs ; it++ )); do
+  sync_id=`echo "$sync_ids" | cut -d '/' -f $it`
+  echo "Sending ${ACTION} request to synchroniser $sync_id"
+  "${BASH_SOURCE%/*}/${ACTION}Sync" $sync_id
+done

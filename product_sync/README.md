@@ -60,6 +60,11 @@ Stop a synchroniser:
 ./stopSync <synchroniser id>
 ```
 
+Start/Stop all synchronisers:
+```
+./doAllSync <start|stop>
+```
+
 Set the TargetCollection:
 ```
 ./setTargetCollection <synchroniser id> <collection name>
