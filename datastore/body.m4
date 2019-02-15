@@ -44,7 +44,7 @@ dnl
 dnl    Properties for GMP data stores:
 dnl
 ifelse(_DATASTORE_TYPE, `GMPDataStore', `dnl
-ex_property( GMPRepoLocation,   `_GMP_REPOLOC')dnl
+ex_property(    RepoLocation,   `_GMP_REPOLOC')dnl
 ex_property(     HFSLocation,  `_HFS_LOCATION')dnl
 ex_property(MaxQueuedRequest, `_MAX_QUEUED_RQ', `',   Int32)dnl
 ex_property(        IsMaster,     `_IS_MASTER', `', Boolean)dnl

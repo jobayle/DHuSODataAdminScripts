@@ -5,7 +5,7 @@ check_basic
 
 ID=$1
 
-m4 -D_ID="Collections('$2')" "${BASH_SOURCE%/*}/odata4link.m4" > body.tmp
+m4 -D_ID="Collections('$2')" "${BASH_SOURCE%/*}/../m4/odata4link.m4" > body.tmp
 exit_if_nzero $?
 
 RESPONSE=$(curl ${CURL_OPTS_XML[@]} -d @body.tmp "${DHOST}/odata/v2/Scanners(${ID})/Collections/\$ref")

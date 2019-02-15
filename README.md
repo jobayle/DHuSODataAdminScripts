@@ -3,6 +3,16 @@
 This repo contains various scripts to administrate a DHuS instance using its
 OData API.
 
+## Deprecation notice
+
+
+The very bright people of the OData OASIS committee decided that the Atom+XML format
+should be removed from the OData standard.
+
+See: http://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652542
+
+Therefore this repo is deprecated. Go make your own tools now.
+
 ### Dependencies
 
 * bash
