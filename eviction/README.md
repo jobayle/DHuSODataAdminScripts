@@ -47,5 +47,8 @@ Update an eviction:
 
 Queue an eviction:
 ```
-./queueEviction <eviction name>
+./queueEviction
+    <eviction name>
+    [target datastore name, only evict in this datastore]
+    [safe, to safe evict (product exists in at least one other datastore)]
 ```

@@ -3,5 +3,20 @@
 source "${BASH_SOURCE%/*}/../functions.sh.inc"
 check_basic
 
-RESPONSE=$(curl ${CURL_OPTS_XML[@]} -X POST -d "$ACTION_NO_PARAMS" "${DHOST}/odata/v2/Evictions('$1')/OData.DHuS.QueueEviction")
+BODY="<?xml version='1.0' encoding='UTF-8'?>
+<m:parameters xmlns:m=\"http://docs.oasis-open.org/odata/ns/metadata\">"
+
+if [ "$2" ]; then
+  echo "TargetDataStore=$2"
+  BODY="${BODY}<TargetDataStore>$2</TargetDataStore>"
+fi
+
+if [ "$3" = "safe" ]; then
+	echo "SafeMode=enabled"
+  BODY="${BODY}<SafeMode>true</SafeMode>"
+fi
+
+BODY="${BODY}</m:parameters>"
+
+RESPONSE=$(curl ${CURL_OPTS_XML[@]} -X POST -d "$BODY" "${DHOST}/odata/v2/Evictions('$1')/OData.DHuS.QueueEviction")
 format_response "$RESPONSE"
