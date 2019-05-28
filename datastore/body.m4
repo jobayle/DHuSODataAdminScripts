@@ -20,6 +20,21 @@ ex_property( CurrentSize,  `_CURRENT_SIZE', `',   Int64)dnl
 ex_property(AutoEviction, `_AUTO_EVICTION', `', Boolean)dnl
 dnl
 dnl
+dnl    Async Shared Properties:
+dnl
+defif_disjunc(`_HAS_PATTERN_REP_IN', `_PR_IN_PAT', `_PR_IN_REP')dnl
+ifdef(`_HAS_PATTERN_REP_IN', `            <d:PatternReplaceIn m:type="#OData.DHuS.PatternReplace">
+ex_property(    Pattern, `_PR_IN_PAT', `', `', 4)dnl
+ex_property(Replacement, `_PR_IN_REP', `', `', 4)dnl
+            </d:PatternReplaceIn>', `dnl')
+dnl
+defif_disjunc(`_HAS_PATTERN_REP_OUT', `_PR_OUT_PAT', `_PR_OUT_REP')dnl
+ifdef(`_HAS_PATTERN_REP_OUT', `            <d:PatternReplaceOut m:type="#OData.DHuS.PatternReplace">
+ex_property(    Pattern, `_PR_OUT_PAT', `', `', 4)dnl
+ex_property(Replacement, `_PR_OUT_REP', `', `', 4)dnl
+            </d:PatternReplaceOut>', `dnl')
+dnl
+dnl
 dnl    Properties for HFS data stores:
 dnl
 ifelse(_DATASTORE_TYPE, `HFSDataStore', `dnl
