@@ -1,0 +1,9 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../functions.sh.inc"
+check_basic
+
+arg=$(make_key_string "$1")
+
+RESPONSE=$(curl ${CURL_OPTS_XML[@]} -X POST "${DHOST}/odata/v2/Products${arg}/OData.DHuS.Order")
+format_response "$RESPONSE"
