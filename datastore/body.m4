@@ -13,11 +13,12 @@ dnl
 dnl    Shared Properties:
 dnl
 ex_property(        Name,          `_NAME')
-ex_property(    ReadOnly,      `_READONLY', `', Boolean)dnl
+ex_property( Restriction,   `_RESTRICTION')dnl
 ex_property(    Priority,      `_PRIORITY', `',   Int32)dnl
 ex_property( MaximumSize,  `_MAXIMUM_SIZE', `',   Int64)dnl
 ex_property( CurrentSize,  `_CURRENT_SIZE', `',   Int64)dnl
 ex_property(AutoEviction, `_AUTO_EVICTION', `', Boolean)dnl
+ex_property(      Filter,        `_Filter')dnl
 dnl
 dnl
 dnl    Async Shared Properties:
@@ -61,7 +62,7 @@ dnl
 ifelse(_DATASTORE_TYPE, `GMPDataStore', `dnl
 ex_property(    RepoLocation,   `_GMP_REPOLOC')dnl
 ex_property(     HFSLocation,  `_HFS_LOCATION')dnl
-ex_property(MaxQueuedRequest, `_MAX_QUEUED_RQ', `',   Int32)dnl
+ex_property(MaxParallelFetchRequestsPerUser, `_MAX_PFRPU', `',   Int32)dnl
 ex_property(        IsMaster,     `_IS_MASTER', `', Boolean)dnl
 dnl
 defif_disjunc(`_HAS_GMPCONF', `_AGENT_ID', `_TARGET_ID')dnl
@@ -85,6 +86,17 @@ ex_property(MaxQueryPerUser,  `_QUOTA_MAX_QPU', `', `Int32', 4)dnl
 ex_property(       Timespan, `_QUOTA_TIMESPAN', `', `Int64', 4)dnl
             </d:Quotas>', `dnl')
 ')dnl
+dnl
+dnl
+dnl    Properties for RemoteDHuS data stores:
+dnl
+ifelse(_DATASTORE_TYPE, `RemoteDHuSDataStore', `dnl
+ex_property(   ServiceUrl,    `_SERVICEURL')dnl
+ex_property(        Login,         `_LOGIN')dnl
+ex_property(     Password,      `_PASSWORD')dnl
+ex_property(AliveInterval, `_ALIVEINTERVAL', `true', `Int64')dnl
+')dnl
+dnl
 dnl
 dnl
 dnl TODO: other datastores:
