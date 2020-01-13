@@ -1,0 +1,10 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../functions.sh.inc"
+check_basic
+
+#PARAMS="<parameters><TransformerName>$2</TransformerName></parameters>"
+PARAMS="{\"TransformerName\": \"${2}\" }"
+
+RESPONSE=$(curl ${CURL_OPTS_JSON[@]} -X POST -d "$PARAMS" "${DHOST}/odata/v2/Products('$1')/OData.DHuS.TransformProduct")
+format_response "$RESPONSE"

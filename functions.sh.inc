@@ -56,6 +56,8 @@ function make_uri_params {
 CURL_OPTS=(-Ss --basic -u ${DLOGIN}:${DPASS} -H 'Accept:application/atom+xml' -H 'Content-Type:application/atom+xml')
 # Curl invocation options with XML format headers
 CURL_OPTS_XML=(-Ss --basic -u ${DLOGIN}:${DPASS} -H 'Accept:application/xml' -H 'Content-Type:application/xml')
+# Curl invocation options with JSON format headers
+CURL_OPTS_JSON=(-Ss --basic -u ${DLOGIN}:${DPASS} -H 'Accept:application/json' -H 'Content-Type:application/json')
 
 # Displays "Success!" if the response($1) is a zero-length string, formats the response($1) as XML otherwise
 function format_response {
