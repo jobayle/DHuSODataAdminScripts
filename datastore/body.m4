@@ -12,13 +12,13 @@ dnl
 dnl
 dnl    Shared Properties:
 dnl
-ex_property(        Name,          `_NAME')
+ex_property(        Name,          `_NAME')dnl
 ex_property( Restriction,   `_RESTRICTION')dnl
 ex_property(    Priority,      `_PRIORITY', `',   Int32)dnl
 ex_property( MaximumSize,  `_MAXIMUM_SIZE', `',   Int64)dnl
 ex_property( CurrentSize,  `_CURRENT_SIZE', `',   Int64)dnl
 ex_property(AutoEviction, `_AUTO_EVICTION', `', Boolean)dnl
-ex_property(      Filter,        `_Filter')dnl
+ex_property(      Filter,        `_FILTER')dnl
 dnl
 dnl
 dnl    Async Shared Properties:
@@ -97,6 +97,20 @@ ex_property(     Password,      `_PASSWORD')dnl
 ex_property(AliveInterval, `_ALIVEINTERVAL', `true', `Int64')dnl
 ')dnl
 dnl
+dnl
+dnl    Properties for PDGS and ParamPDGS data stores:
+dnl
+ifany(_DATASTORE_TYPE, `PDGSDataStore', `ParamPDGSDataStore', `dnl
+ex_property(             ServiceUrl, `_SERVICEURL')dnl
+ex_property(                  Login,      `_LOGIN')dnl
+ex_property(               Password,   `_PASSWORD')dnl
+ex_property(MaxConcurrentsDownloads,    `_MAXCCDL', `true', `Int32')dnl
+ex_property(               Interval,   `_INTERVAL', `true', `Int64')dnl
+')dnl
+ifelse(_DATASTORE_TYPE, `ParamPDGSDataStore', `dnl
+ex_property(   UrlParamPattern, `_URLPARAMPATTERN')dnl
+ex_property(ProductNamePattern, `_PRODNAMEPATTERN')dnl
+')dnl
 dnl
 dnl
 dnl TODO: other datastores:

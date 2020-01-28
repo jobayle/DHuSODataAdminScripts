@@ -17,6 +17,12 @@ define(`ifnempty', `ifdef(`$1', `ifelse($1, `', `$3', `$2')', `$3')')
 define(`defif_disjunc', `ifdef(`$2', `define(`$1')', `ifelse(`$#', `2', , `defif_disjunc(`$1', shift(shift($@)))')')')
 -----
 
+    ifany: if `$1' is defined to any of the passed values, then expands the last arg, expects least 3 args
+
+define(`expand_last', `ifelse(`$#', `1', `$1', `expand_last(shift($@))')')
+define(`ifany', `ifelse(`$1', `$2', `expand_last($@)', `ifelse(`$#', `2', `', `ifany(`$1', shift(shift($@)))')')')
+-----
+
     fatal_error: prints message then exits
 
 define(`fatal_error', `errprint(__program__:__file__:__line__`: fatal error: $*

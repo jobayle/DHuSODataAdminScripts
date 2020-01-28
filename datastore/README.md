@@ -24,7 +24,8 @@ Create a DataStore:
 ```
 ./createDataStore
     <-D_DATASTORE_TYPE=DataStore_Type>
-    <-D_NAME=name> <-D_READONLY=true|false>
+    <-D_NAME=name>
+    <-D_RESTRICTION=none|referencesOnly|readOnly>
     <-D_PRIORITY=>
     [-D_MAXIMUM_SIZE=]
     [-D_CURRENT_SIZE=]
