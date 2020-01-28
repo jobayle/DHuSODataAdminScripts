@@ -1,0 +1,12 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../functions.sh.inc"
+check_basic
+
+m4 "$@" "${BASH_SOURCE%/*}/body.m4" > body.tmp
+exit_if_nzero $?
+
+RESPONSE=$(curl ${CURL_OPTS[@]} -d @body.tmp "${DHOST}/odata/v2/Collections")
+format_response "$RESPONSE"
+
+rm body.tmp
