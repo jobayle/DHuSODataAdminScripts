@@ -23,6 +23,12 @@ dnl
 dnl
 dnl    Async Shared Properties:
 dnl
+ex_property(                       IsMaster,      `_IS_MASTER',     `', Boolean)dnl
+ex_property(                    HFSLocation,   `_HFS_LOCATION')dnl
+ex_property(             MaxPendingRequests, `_MAX_PENDING_RQ',     `', Int32)dnl
+ex_property(             MaxRunningRequests, `_MAX_RUNNING_RQ',     `', Int32)dnl
+ex_property(MaxParallelFetchRequestsPerUser,      `_MAX_PFRPU', `true', Int32)dnl
+dnl
 defif_disjunc(`_HAS_PATTERN_REP_IN', `_PR_IN_PAT', `_PR_IN_REP')dnl
 ifdef(`_HAS_PATTERN_REP_IN', `            <d:PatternReplaceIn m:type="#OData.DHuS.PatternReplace">
 ex_property(    Pattern, `_PR_IN_PAT', `', `', 4)dnl
@@ -61,9 +67,6 @@ dnl    Properties for GMP data stores:
 dnl
 ifelse(_DATASTORE_TYPE, `GMPDataStore', `dnl
 ex_property(    RepoLocation,   `_GMP_REPOLOC')dnl
-ex_property(     HFSLocation,  `_HFS_LOCATION')dnl
-ex_property(MaxParallelFetchRequestsPerUser, `_MAX_PFRPU', `',   Int32)dnl
-ex_property(        IsMaster,     `_IS_MASTER', `', Boolean)dnl
 dnl
 defif_disjunc(`_HAS_GMPCONF', `_AGENT_ID', `_TARGET_ID')dnl
 ifdef(`_HAS_GMPCONF', `            <d:Configuration m:type="#OData.DHuS.GMPConfiguration">
