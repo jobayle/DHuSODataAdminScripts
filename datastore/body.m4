@@ -103,7 +103,7 @@ dnl
 dnl
 dnl    Properties for PDGS and ParamPDGS data stores:
 dnl
-ifany(_DATASTORE_TYPE, `PDGSDataStore', `ParamPDGSDataStore', `dnl
+ifany(_DATASTORE_TYPE, `PDGSDataStore', `ParamPDGSDataStore', `LTADataStore', `dnl
 ex_property(             ServiceUrl, `_SERVICEURL')dnl
 ex_property(                  Login,      `_LOGIN')dnl
 ex_property(               Password,   `_PASSWORD')dnl
