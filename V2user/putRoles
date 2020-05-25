@@ -1,0 +1,18 @@
+#!/bin/bash
+
+echo "ODataEngine does not implement put on Collection Properties" >&2
+exit 1
+
+source "${BASH_SOURCE%/*}/../functions.sh.inc"
+check_basic
+
+arg=$(make_key_string "$1")
+
+body='<d:SystemRoles m:type="#Collection(OData.DHuS.SystemRole)">'
+while shift; do
+  body="${body}<d:Name>$1</d:Name>"
+done
+body="${body}</d:SystemRoles>"
+
+RESPONSE=$(curl -vv ${CURL_OPTS[@]} -X PUT -d "$body" "${DHOST}/odata/v2/Users${arg}/SystemRoles")
+format_response "$RESPONSE"

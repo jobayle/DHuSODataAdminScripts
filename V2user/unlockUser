@@ -1,0 +1,10 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../functions.sh.inc"
+check_basic
+
+#PARAMS="<parameters><Id>$2</Id></parameters>"
+PARAMS="{\"Id\": \"${2}\" }"
+
+RESPONSE=$(curl ${CURL_OPTS_JSON[@]} -X POST -d "$PARAMS" "${DHOST}/odata/v2/Users('$1')/OData.DHuS.Unlock")
+echo "$RESPONSE"

@@ -35,6 +35,18 @@ define(`forloop', `ifelse(eval(`($2) <= ($3)'), `1', `pushdef(`$1')_$0(`$1', eva
 define(`_forloop', `define(`$1', `$2')$4`'ifelse(`$2', `$3', `', `$0(`$1', incr(`$2'), `$3', `$4')')')
 -----
 
+    quote(args): freom example quote.m4, convert args to single-quoted string
+
+define(`quote', `ifelse(`$#', `0', `', ``$*'')')
+-----
+
+    foreachq(iter, `comma separated list', text) from example foreachq.m4
+
+define(`foreachq', `pushdef(`$1')_foreachq($@)popdef(`$1')')
+define(`_arg1', `$1')
+define(`_foreachq', `ifelse(quote($2), `', `', `define(`$1', `_arg1($2)')$3`'$0(`$1', `shift($2)', `$3')')')
+-----
+
     ex_property: expands property, ex_property(PropName, MacroName, Nullable=false, PropType=String, Indent=3)
         Property is expanded if MacroName is defined.
 

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+${BASH_SOURCE%/*}/createUser -D_USERNAME=demo -D_EMAIL='azerty@foo.bar' -D_FIRSTNAME=demo -D_LASTNAME=demo -D_COUNTRY=US -D_PASSWORD=demo
+

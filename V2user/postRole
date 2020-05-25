@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo "Olingo 4.7 does not implement post on Collection Properties" >&2
+exit 1
+
+source "${BASH_SOURCE%/*}/../functions.sh.inc"
+check_basic
+
+arg=$(make_key_string "$1")
+
+body="<d:Name>$2</d:Name>"
+
+RESPONSE=$(curl -vv ${CURL_OPTS[@]} -d "$body" "${DHOST}/odata/v2/Users${arg}/SystemRoles")
+format_response "$RESPONSE"

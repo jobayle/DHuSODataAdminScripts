@@ -1,0 +1,9 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../functions.sh.inc"
+check_basic
+
+arg=$(make_key_string "$1")$(make_uri_params "$2")
+
+RESPONSE=$(curl ${CURL_OPTS[@]} "${DHOST}/odata/v2/Users${arg}")
+format_response "$RESPONSE"
